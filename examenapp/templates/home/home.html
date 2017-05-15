@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+    <h1>Welkom bij ToolsForEver!</h1>
+    <div class="lorem">
+     {% lorem 3 p %}
+    {% lorem 2 p %}
+    </div>
+    <br>
+<img src="{% static "images/Hoofdkantoor.jpg" %}" style="width: 20%;">
+{% endblock content %}

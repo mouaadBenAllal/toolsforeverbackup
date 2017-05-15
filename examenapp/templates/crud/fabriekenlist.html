@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ToolsForEver</title>
+</head>
+<body>
+{% block content %}
+<h1>Overzicht van alle fabrieken</h1>
+    <br>
+    <br>
+    <table class="table table-hover" style="width: 50%;">
+    <thead>
+      <tr>
+        <th>Fabriekscode</th>
+        <th>Fabrieksnaam</th>
+        <th>Telefoonnummer</th>
+        <th>Verwijder/wijzig</th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr>
+    {# Er word geloopt door alle gegevens van de Fabriek model. #}
+        {% for fabriek in object_list %}
+            <td><b>{{ fabriek.id }}</b></td>
+            <td>{{ fabriek.fabrieksnaam }}</td>
+            <td>{{ fabriek.telefoonnummer }}</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{% url 'deletefabriek'  fabriek.id%}"><span class="glyphicon glyphicon-trash"></span></a>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="{% url 'editfabriek' fabriek.id%}"><span class="glyphicon glyphicon-pencil"></span></a></td>
+    </tr>
+        {% empty %}
+            Er zijn momenteel geen fabrieken.
+        {% endfor %}
+            <td><a href="{% url 'createfabriek' %}"><span class="glyphicon glyphicon-plus"></span></a></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    </tbody>
+  </table>
+
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block content %}
+    <img src="{% static "images/outsideOffice.png" %}" style="width: 20%;">
+    <h1>Contact opnemen</h1>
+    <h4><b>Vul onderstaand formulier in.</b></h4>
+    <div class="form-group">
+    <label>Naam:</label>
+        <input type="text" class="form-control">
+        <br>
+        <label>Onderwerp:</label>
+        <input type="text" class="form-control">
+        <br>
+        <label>Bericht:</label>
+        <textarea class="form-control" rows="5"></textarea>
+        <br>
+    <button class="btn btn-primary">Verstuur</button>
+    <br>
+    <br>
+    </div>
+    <div class="contact">
+        <b><p>Laan van NOI 32</p>
+        <p>127 AH Rotterdam</p>
+        <p>Nederland</p>
+        <p>+31 (0) 36 22 21 143</p>
+        <p>info@toolsforever.nl</p></b>
+    </div>
+    <div class="contact">
+        <b><p>Veluwezoom 32</p>
+        <p>1327 AH Almere</p>
+        <p>Nederland</p>
+        <p>+31 (0) 46 70 22 133</p>
+        <p>info@toolsforever.nl</p></b>
+    </div>
+    <div class="contact">
+        <b><p>De gracht 2</p>
+        <p>1222 AH Amsterdam</p>
+        <p>Nederland</p>
+        <p>+31 (0) 32 20 66 123</p>
+        <p>info@toolsforever.nl</p></b>
+    </div>
+    <div class="contact" style="">
+        <b><p>Postbus 12345</p>
+        <p>ToolsForEver</p>
+        <p>5600 VM AH Eindhoven</p>
+        <p>Nederland</p>
+        <p>Telefoon: (040) 987 65 00</p>
+        <p>Fax: (040) 987 65 99</p>
+        <p>info@toolsforever.nl</p></b>
+    </div>
+{% endblock %}
+</body>
+</html>

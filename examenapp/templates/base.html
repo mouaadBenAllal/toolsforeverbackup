@@ -1,0 +1,73 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>ToolsForEver</title>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link href="{% static "css/bootstrap.css" %}" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="{% static "css/simple-sidebar.css" %}" rel="stylesheet">
+    <link href="{% static "css/sticky-footer.css" %}" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar">
+  <div class="container-fluid">
+      <a class="navbar-brand" href="{% url "home" %}">
+        <img alt="Logo" src="{% static "images/newlogotoolsforever.jpg" %}" style="width: 210px; height: 40px;">
+      </a>
+      <p class="navbar-text navbar-right">Ingelogd als <a href="#" class="button">Admin</a>
+          <button class="btn btn-primary" href="#">Uitloggen</button></p>
+  </div>
+
+
+  </div><!-- /.container-fluid -->
+</nav>
+    <div id="wrapper" class="toggled">
+
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+            {% with request.resolver_match.url_name as url_name %}
+                <li><a href="#">Medewerkers</a></li>
+                <li><a href="#">Producten</a></li>
+                <li><a href="#">Locaties</a></li>
+                <li class="{% if url_name == "fabrieksoverzicht" %}active{% endif %}"><a href="{% url "fabrieksoverzicht" %}">Fabrieken</a></li>
+                <li><a href="#">Zoeken</a></li>
+
+                <li class="{% if url_name == "contact" %}active{% endif %}"><a href="{% url "contact" %}">Contact</a></li>
+                {% endwith %}
+            </ul>
+
+        </div>
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        {% block content %}
+
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<footer class="footer">
+      <div class="container">
+        <p class="text-muted">© 2017 ToolsForEver</p>
+      </div>
+</footer>
+</body>
+
+</html>

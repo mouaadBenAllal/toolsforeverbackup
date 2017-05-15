@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ToolsForEver</title>
+</head>
+<body>
+{% block content %}
+<h1>Voeg een fabriek toe</h1>
+    <br>
+    <br>
+<form action="" method="post">
+<input type="submit" class="btn btn-primary" value="Voeg toe">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" class="btn btn-primary" value="Voeg toe">
+</form>
+{% endblock %}
+</body>
+</html>

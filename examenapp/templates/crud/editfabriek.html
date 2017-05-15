@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit fabriek</title>
+</head>
+<body>
+{% block content %}
+    <form action="{% url 'editfabriek' fabriek.id %}" method="post">
+    <input type="submit" class="btn btn-primary" value="Opslaan">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" class="btn btn-primary" value="Opslaan">
+    </form>
+<br>
+    <br>
+
+{% endblock %}
+</body>
+</html>
